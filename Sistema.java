@@ -377,8 +377,8 @@ public class Sistema {
      * Calculamos el total a pagar al final
      * @return
      */
-    public int Total(){
-        int total = 0;
+    public double Total(){
+        double total = 0;
         for (int a = 0; a < carrito.size(); a++){
             Producto product = carrito.get(a);
             total += product.getPrecio();

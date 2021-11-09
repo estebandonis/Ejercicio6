@@ -354,6 +354,6 @@ public class Vista {
         System.out.println("Cliente: "+ datos[0]);
         System.out.println("NIT: "+ datos[1]);
         System.out.println("Fecha: "+datos[2]);
-        System.out.println("Total: $."+datos[3]+"");
+        System.out.println("Total: $"+datos[3]+"");
     }
 }

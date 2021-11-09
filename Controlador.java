@@ -83,8 +83,8 @@ public class Controlador{
             else if (opcion == 6){
                 Random rand = new Random();
                 String[] datos = vista.datosFactura();
-                int total = sistem.Total();
-                datos[3] = Integer.toString(total);
+                Double total = sistem.Total();
+                datos[3] = Double.toString(total);
                 int randint = rand.nextInt((500 - 300) + 1) + 300;
                 datos[4] = Integer.toString(randint);
                 vista.finalizar(datos);
