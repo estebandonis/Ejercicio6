@@ -2,14 +2,25 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Programa que interactua
+ */
+
 public class Vista {
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * Le damos la bienvenida al usuario
+     */
     public void bienvenida(){
         System.out.println("Bienvenido a la pagina de Electronica Latinoamericana");
         System.out.println("Estas son nuestras sucursales disponibles:");
     }
 
+    /**
+     * Desplegamos el menu
+     * @return
+     */
     public int menu(){
         System.out.println("Elija una opción:");
         System.out.println("1. Ver carrito");
@@ -33,6 +44,10 @@ public class Vista {
         return option;//regresamos el valor convertido
     }
 
+    /**
+     * Le preguntamos al usuario de que manera quiere ordenar el programa
+     * @return
+     */
     public int ordenar(){
         System.out.println("¿Como quiere ordenar la lista? (Coloque un numero de 1 a 3");
         System.out.println("(1) Fecha");
@@ -57,10 +72,17 @@ public class Vista {
         return option;
     }
 
+    /**
+     * Le indicamos al usuario que agregue un articulo al carrito antes de pedirlo
+     */
     public void agregueArticulo(){
         System.out.println("Por favor, agregue un articulo antes");
     }
 
+    /**
+     * Le pedimos el ID del articulo que quiere agregar
+     * @return
+     */
     public int articuloAgregar(){
         System.out.println("¿Que articulo desea agregar? (Escriba el ID por favor)");
         boolean paso = false;
@@ -77,16 +99,26 @@ public class Vista {
         return articulo;
     }
 
+    /**
+     * Le indicamos que se agrego el articulo con exito
+     */
     public void seAgrego(){
         System.out.println("El articulo se agrego con exito");
     }
 
+    /**
+     * Le indicamos que no se agrego exitosamente
+     */
     public void noSeAgrego(){
         System.out.println("El articulo no se pudo agregar");
     }
 
+    /**
+     * Le pedimos el ID del articulo que quiere eliminar
+     * @return
+     */
     public int articuloEliminar(){
-        System.out.println("¿Que articulo desea elininar del carrito? (Escriba el ID por favor)");
+        System.out.println("¿Que articulo desea eliminar del carrito? (Escriba el ID por favor)");
         boolean paso = false;
         int articulo = 0;
         while (paso == false){//Aplicamos un metodo para que escriba el 
@@ -101,14 +133,24 @@ public class Vista {
         return articulo;
     }
 
+    /**
+     * Le indicamos que se elimino el articulo con exito
+     */
     public void seElimino(){
         System.out.println("El articulo fue eliminado");
     }
 
+    /**
+     * Le indicamos que no se elimino el articulo con exito
+     */
     public void noSeElimino(){
         System.out.println("El articulo no fue eliminado");
     }
 
+    /**
+     * Desplegamos todos los productos disponibles
+     * @param productos
+     */
     public void productos(ArrayList<Producto> productos){
         if (productos.size() != 0){
             for (int i = 0; i < productos.size(); i++){
@@ -129,6 +171,10 @@ public class Vista {
         }
     }
 
+    /**
+     * Desplegamos todas las sucursales disponibles
+     * @param sucursales
+     */
     public void Sucursales(ArrayList<Sucursal> sucursales){
         if (sucursales.size() != 0){
             for (int i = 0; i < sucursales.size(); i++){
@@ -148,6 +194,10 @@ public class Vista {
         }
     }
 
+    /**
+     * Le preguntamos que articulo le gusta probar
+     * @return
+     */
     public int articuloAProbar(){
         System.out.println("¿Que articulo desea probar? (Escriba el ID del articulo)");
         boolean paso = false;
@@ -164,6 +214,9 @@ public class Vista {
         return funcion;
     }
 
+    /**
+     * Despliega todas las funcionalidades disponibles
+     */
     public void funcionalidades(){
         System.out.println("-------------------------------------");
         System.out.println("Smartphone");
@@ -247,6 +300,10 @@ public class Vista {
         System.out.println("");
     }
 
+    /**
+     * Le preguntamos la funcionalidad que desea probar
+     * @return
+     */
     public int funcionalidadAProbar(){
         System.out.println("¿Que funcionalidad desea probar? (Asegurese de que la funcionalidad elegida este disponible en el dispositivo)");
         System.out.println("(1) Hacen Llamadas");
@@ -271,18 +328,10 @@ public class Vista {
         return funcion;
     }
 
-    public String numeroAMarcar(){
-        System.out.println("¿Que numero desea marcar?");
-        String numero = scan.nextLine();
-        return numero;
-    }
-
-    public String linkAMarcar(){
-        System.out.println("¿Que link desea usar?");
-        String link = scan.nextLine();
-        return link;
-    }
-
+    /**
+     * Le pedimos los datos al usuario para la factura
+     * @return
+     */
     public String[] datosFactura(){
         String[] valores = new String[5];
         System.out.println("Escriba su nombre");
@@ -294,6 +343,10 @@ public class Vista {
         return valores;
     }
 
+    /**
+     * Desplegamos la factura
+     * @param datos
+     */
     public void finalizar(String[] datos){
         System.out.println("");
         System.out.println("-------------------------------");

@@ -4,7 +4,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Random;
+
+/**
+ * Programa donde se maneja la logica del programa
+ */
 
 public class Sistema {
     private ArrayList<Sucursal> Sucursales = new ArrayList<Sucursal>();
@@ -12,6 +15,9 @@ public class Sistema {
     private ArrayList<Producto> carrito = new ArrayList<Producto>();
     private int numProducto = 1;
 
+    /**
+     * Extraemos los datos de los archivos
+     */
     public void datosProductos(){
         String pathActual = "Productos.csv";//Establecemos la ruta
         String line = "";
@@ -149,6 +155,9 @@ public class Sistema {
         }
     }
 
+    /**
+     * Extraemos los datos de los archivos
+     */
     public void datosSucursales(){
         String pathActual = "Sucursales.csv";//Establecemos la ruta
         String line = "";
@@ -176,18 +185,11 @@ public class Sistema {
         }
     }
 
-    public void ordenarCarritoFecha(LocalDate fecha){
-
-    }
-
-    public void ordenarCarritoPrecio(int precio){
-
-    }    
-
-    public void ordenarCarritoMarca(String marca){
-
-    }
-
+    /**
+     * Agregamos un articulo al carrito
+     * @param codigo
+     * @return
+     */
     public boolean agregarArticuloCarrito(int codigo){
         boolean agregado = false;
         for (int i = 0; i < Productos.size(); i++){
@@ -201,6 +203,9 @@ public class Sistema {
         return agregado;
     }
 
+    /**
+     * Eliminamos un articulo del carrito
+     */
     public boolean eliminarArticuloCarrito(int codigo){
         boolean eliminado = false;
         for (int a = 0; a < carrito.size(); a++){
@@ -214,6 +219,11 @@ public class Sistema {
         return eliminado;
     }
 
+    /**
+     * Ejecutamos la funcionalidad que el usuario desea
+     * @param funcion
+     * @param id
+     */
     public void ejecutarFuncionalidad(int funcion, int id){
         boolean paso = false;
         for (int e = 0; e < Productos.size(); e++){
@@ -363,6 +373,10 @@ public class Sistema {
         }
     }
 
+    /**
+     * Calculamos el total a pagar al final
+     * @return
+     */
     public int Total(){
         int total = 0;
         for (int a = 0; a < carrito.size(); a++){
@@ -372,14 +386,26 @@ public class Sistema {
         return total;
     }
 
+    /**
+     * Enviamos la lista de producto
+     * @return
+     */
     public ArrayList<Producto> getProductos() {
         return Productos;
     }
 
+    /**
+     * Enviamos la lista de sucursales
+     * @return
+     */
     public ArrayList<Sucursal> getSucursales() {
         return Sucursales;
     }
 
+    /**
+     * Enviamos la lista del carrito
+     * @return
+     */
     public ArrayList<Producto> getCarrito() {
         return carrito;
     }

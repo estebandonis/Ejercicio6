@@ -3,7 +3,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
 
+/**
+ * Clase donde se ejecutan todos los modulos
+ */
+
 public class Controlador{
+    /**
+     * Es donde se ejecuta el programa completo
+     * @param args
+     */
     public static void main(String[] args) {
         Sistema sistem = new Sistema();
         Vista vista = new Vista();
